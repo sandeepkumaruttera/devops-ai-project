@@ -5,7 +5,7 @@ metadata:
   namespace: boutique
 
 data:
-  DB_HOST: expense-dev.xxxxxx.us-east-1.rds.amazonaws.com
+  DB_HOST: expense-dev.cox4q0mwma2l.us-east-1.rds.amazonaws.com
   DB_PORT: "5432"
   DB_NAME: auth_db
 
@@ -46,7 +46,7 @@ spec:
       containers:
         - name: auth
 
-          image: <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/auth:latest
+          image: joindevops006/joindevops:auth
 
           ports:
             - containerPort: 3002
