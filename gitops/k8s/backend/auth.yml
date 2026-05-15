@@ -21,7 +21,7 @@ type: Opaque
 stringData:
   DB_USER: postgres
   DB_PASSWORD: ExpenseApp1
-  AUTH_DB_URL: "postgresql://postgres:ExpenseApp1@expense-dev.cox4q0mwma2l.us-east-1.rds.amazonaws.com:5432/auth_db?sslmode=require"
+  AUTH_DB_URL: "postgresql://postgres:ExpenseApp1@expense-dev.cox4q0mwma2l.us-east-1.rds.amazonaws.com:5432/auth_db?sslmode=disable"
 
 ---
 apiVersion: apps/v1
