@@ -9,6 +9,18 @@ data:
   DB_PORT: "5432"
   DB_NAME: auth_db
 
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: db-secret
+  namespace: boutique
+
+type: Opaque
+
+stringData:
+  DB_USER: postgres
+  DB_PASSWORD: mypassword
 
 ---
 apiVersion: apps/v1
@@ -49,6 +61,9 @@ spec:
           envFrom:
             - configMapRef:
                 name: db-config
+
+            - secretRef:
+                name: db-secret
 
 ---
 apiVersion: v1
