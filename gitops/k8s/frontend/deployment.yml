@@ -22,17 +22,17 @@ spec:
             - name: REACT_APP_API_URL
               value: "http://gateway:3001/api"
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
   name: frontend
   namespace: boutique
 spec:
-  type: NodePort
   selector:
     app: frontend
   ports:
-    - port: 3000
+    - protocol: TCP
+      port: 3000
       targetPort: 3000
-      nodePort: 30080
+  type: ClusterIP
+
