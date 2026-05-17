@@ -16,21 +16,23 @@ spec:
       containers:
         - name: frontend
           image: joindevops006/joindevops:frontend
+          ports:
+            - containerPort: 3000
           env:
             - name: REACT_APP_API_URL
               value: "http://gateway:3001/api"
 ---
+
 apiVersion: v1
 kind: Service
 metadata:
   name: frontend
   namespace: boutique
 spec:
+  type: NodePort
   selector:
     app: frontend
   ports:
-    - protocol: TCP
-      port: 3000
+    - port: 3000
       targetPort: 3000
-  type: LoadBalancer
-
+      nodePort: 30080
