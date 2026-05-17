@@ -16,8 +16,6 @@ spec:
       containers:
         - name: frontend
           image: joindevops006/joindevops:frontend
-          ports:
-            - containerPort: 3000
           env:
             - name: REACT_APP_API_URL
               value: "http://gateway:3001/api"
