@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/frontend:1ebec3729cd10fe1eeac6f0858fba58e2da07956
+          image: joindevops006/joindevops:frontend
           ports:
             - containerPort: 3000
           env:
@@ -34,5 +34,5 @@ spec:
     - protocol: TCP
       port: 3000
       targetPort: 3000
-  type: ClusterIP
+  type: LoadBalancer
 
