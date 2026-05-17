@@ -3,8 +3,8 @@ kind: ConfigMap
 metadata:
   name: boutique-db-dump
   namespace: boutique
+
 data:
-  data:
   10-create-databases.sql: |
     CREATE DATABASE auth_db;
     CREATE DATABASE products_db;
@@ -12,8 +12,8 @@ data:
     CREATE DATABASE users_db;
 
   20-init-schema.sql: |
-    -- Example: Create tables in auth_db
     \c auth_db
+
     CREATE TABLE IF NOT EXISTS users (
       id SERIAL PRIMARY KEY,
       name VARCHAR(100),
@@ -21,6 +21,9 @@ data:
     );
 
   quick-seed.sql: |
-    -- Seed data for demo
     \c auth_db
-    INSERT INTO users(name, email) VALUES('Alice','alice@example.com'),('Bob','bob@example.com');
+
+    INSERT INTO users(name, email)
+    VALUES
+    ('Alice','alice@example.com'),
+    ('Bob','bob@example.com');
